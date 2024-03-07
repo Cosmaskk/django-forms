@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ALL EMPLOYEES</title>
+</head>
+<body>
+<h2>ALL EMPLOYEES IN OUR DATABASE</h2>
+<table border="11" bgcolor="#ffd700" cellpadding="5">
+    <thead>
+  
+<tr>
+    <td>NAME</td>
+    <td>AGE</td>
+    <td>BODY</td>
+    <td></td>
+</tr>
+
+    </thead>
+    <tbody>
+    {% for employee in show %}
+        <tr>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.age }}</td>
+            <td>{{ employee.body }}</td>
+        <td>
+            <a href="{%url 'employee_update' employee.id%}"><button>UPDATE</button></a>
+            <a href="{% url 'delete' employee.id%}"><button>DELETE</button></a>
+        </td>
+        </tr>
+    
+    {% endfor %}
+    </tbody>
+    
+</table>
+
+
+
+</body>
+</html>
